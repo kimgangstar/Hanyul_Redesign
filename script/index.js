@@ -1,7 +1,10 @@
 const heroBnr = document.querySelector('.hero_bnr');
 const best = document.querySelector('.best_sellers .best');
 const advertise = document.querySelector('.advertise .advertise_bnr');
-console.log(heroBnr,best,advertise);
+const solution = document.querySelector('.solution_swiper');
+const inside = document.querySelector('.inside_wrap');
+
+console.log(heroBnr,best,advertise,solution,inside);
 
 const heroSwiper = new Swiper (heroBnr,{
     pagination:{
@@ -38,4 +41,27 @@ const advertiseSwiper = new Swiper(advertise,{
     slidesPerView:2,
     spaceBetween:20,
     centeredSlides:true,
+})
+
+const solutionSwiper = new Swiper(solution,{
+    slidesPerView:3,
+    spaceBetween:15,
+    navigation:{
+        nextEl:'.Solution .item_box .next',
+        prevEl:'.Solution .item_box .prev',
+    },
+    loop:true,
+})
+
+const insideSwiper = new Swiper(inside,{
+    slidesPerView:4,
+    spaceBetween:13,
+    loop:true,
+    navigation:{
+        nextEl:'.bnr_container .next',
+        prevEl:'.bnr_container .prev',
+    },
+    pagination:{
+        el: ".bnr_container .swiper-pagination",
+    },
 })
